@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Person Submitted</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Person Created</h1>
+	<p th:text="${param.q[0]}" th:unless="${param.q == null}">Test</p>
+	${param.person.firstname}
+    <p>firstName: <span th:text="${ person.firstName }" /> </p> <br/>
+    <p>lastName: <span th:text="${ person.lastName }" /> </p><br/>
+    <p>age: <span th:text="${ person.age }" /> </p>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Spring Boot starter Project
+
+* Create a Maven project
+* Add the two dependencies 
+	** spring-boot-starter-web
+	** spring-boot-starter-test
+
+	

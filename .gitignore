@@ -1,0 +1,8 @@
+*.class
+*.jar
+*.war
+target
+bin/
+target/*
+target/
+*.log
