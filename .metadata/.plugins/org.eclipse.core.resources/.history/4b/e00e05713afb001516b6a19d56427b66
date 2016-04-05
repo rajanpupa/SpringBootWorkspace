@@ -1,0 +1,36 @@
+package com.boot.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.boot.model.Person;
+
+@Controller
+public class PersonController {
+
+	@RequestMapping(value="/person", method=RequestMethod.GET)
+	public String person(Model model){
+		Person p = new Person();
+		p.setFirstName("Rajan");
+		p.setLastName("upadhyay");
+		p.setAge(25);
+		model.addAttribute("person", p);
+		
+		System.out.println("In the /person controller");
+		return "personForm";
+	}
+	
+	@RequestMapping(value="/person", method=RequestMethod.POST)
+	public String createPerson(Model model){
+		Person p = new Person();
+		p.setFirstName("Rajan");
+		p.setLastName("upadhyay");
+		p.setAge(25);
+		model.addAttribute("person", p);
+		
+		System.out.println("In the /person controller");
+		return "personFormSubmit";
+	}
+}
