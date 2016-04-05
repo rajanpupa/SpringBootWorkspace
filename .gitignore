@@ -2,11 +2,10 @@
 *.jar
 *.war
 target
-bin/
-target/*
 target/
 *.log
-../ ./ .git/ .metadata/ .recommenders/
+.git/
+.recommenders/
 .metadata
 bin/
 tmp/
