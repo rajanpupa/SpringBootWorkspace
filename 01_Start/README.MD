@@ -9,6 +9,7 @@
 	** @EnableAutoConfiguration -- tries to automatically configure best on classpath and its best guess
 	** @ComponentScan -- provides component scanning directive
 * File has a main method
+* Spring boot scans all package below its main application class. Otherwise you will have to add the @ComponentScan annotation and provide the packages to scan.
 
 
 	
