@@ -11,7 +11,7 @@ $(document).ready( function(){
 			return;
 		}
 		var data2 = eval( "(" + data + ")" );
-		if(data2.subType=="ajax"){
+		if(data2.subType!=="ajax"){
 			// opposite of preventDefault()
 			$(this).unbind('submit').submit();
 		}
