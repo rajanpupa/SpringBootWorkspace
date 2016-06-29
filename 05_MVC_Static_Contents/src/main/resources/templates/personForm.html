@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="script/script2.js"></script>
+    <link type="text/css" rel="stylesheet" href="style/style1.css"></link>
+</head>
+<body>
+	<h1>Form</h1>
+	<div id="result"></div>
+    <form id="command" action="#" th:action="@{/person}" th:object="${person}" method="post">
+    	<p>firstName: <input type="text" th:field="*{firstName}" /></p>
+        <p>lastName: <input type="text" th:field="*{lastName}" /></p>
+        <p>age: <input type="text" th:field="*{age}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        <p><input type="checkbox" name="subType" value="ajax"/>Submit By Ajax</p>
+    </form>
+</body>
+</html>

@@ -7,9 +7,8 @@
 <body>
 	<h1>Person Created</h1>
 	<p th:text="${param.q[0]}" th:unless="${param.q == null}">Test</p>
-		${person.firstname}
-    <p>firstName: <span th:text="${ person.firstName }" /> </p> <br/>
-    <p>lastName: <span th:text="${ person.lastName }" /> </p><br/>
+    <p>firstName: <span th:text="${ person.firstName }" /> </p> 
+    <p>lastName: <span th:text="${ person.lastName }" /> </p>
     <p>age: <span th:text="${ person.age }" /> </p>
 </body>
 </html>
