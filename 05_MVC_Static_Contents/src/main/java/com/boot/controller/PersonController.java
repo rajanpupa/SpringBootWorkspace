@@ -12,6 +12,18 @@ import com.boot.model.Person;
 
 @Controller
 public class PersonController {
+	
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	public String index(Model model){
+		Person p = new Person();
+		p.setFirstName("Rajan");
+		p.setLastName("upadhyay");
+		p.setAge(25);
+		model.addAttribute("person", p);
+		
+		System.out.println("In the /person controller");
+		return "personForm";
+	}
 
 	@RequestMapping(value="/person", method=RequestMethod.GET)
 	public String person(Model model){

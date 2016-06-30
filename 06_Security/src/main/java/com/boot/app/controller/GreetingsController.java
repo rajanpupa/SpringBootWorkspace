@@ -50,6 +50,9 @@ public class GreetingsController {
 			)
 	public ResponseEntity<Greeting> createGreeting(@RequestBody Greeting greeting) {
 		Greeting savedGreeting = greetingService.create(greeting);
+		if (savedGreeting == null) {
+			return new ResponseEntity<Greeting>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 		return new ResponseEntity<Greeting>(savedGreeting, HttpStatus.CREATED);
 	}
 
@@ -61,7 +64,7 @@ public class GreetingsController {
 	public ResponseEntity<Greeting> updateGreeting(@RequestBody Greeting greeting) {
 		Greeting updatedGreeting = greetingService.update(greeting);
 		if (updatedGreeting == null) {
-			new ResponseEntity<Greeting>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Greeting>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<Greeting>(updatedGreeting, HttpStatus.OK);
 	}
