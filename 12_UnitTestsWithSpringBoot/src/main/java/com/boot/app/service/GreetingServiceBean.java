@@ -2,6 +2,9 @@ package com.boot.app.service;
 
 import java.util.Collection;
 
+import javax.persistence.EntityExistsException;
+import javax.persistence.NoResultException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
@@ -36,7 +39,8 @@ public class GreetingServiceBean implements GreetingService {
 	public Greeting create(Greeting greeting) {
 		if (greeting.getId() != null) {
 			// cannot create Greeting with specified ID value
-			return null;
+			throw new EntityExistsException(
+                    "The id attribute must be null to persist a new entity.");
 		}
 		
 		Greeting savedGreeting = greetingsRepository.save(greeting);// (greeting);
@@ -55,7 +59,7 @@ public class GreetingServiceBean implements GreetingService {
 
 		if (greetingPersisted == null) {
 			// Cannot update greeting that hasn't been persisted
-			return null;
+			throw new NoResultException("Requested entity not found.");
 
 		}
 		Greeting updatedGreeting = greetingsRepository.save(greeting);
