@@ -1,7 +1,5 @@
 package com.boot.app;
 
-import java.util.Arrays;
-
 /**
  * Spring Boot main Application
  */

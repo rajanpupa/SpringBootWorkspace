@@ -1,0 +1,10 @@
+.errorMessage{
+	
+	border: 1px solid yellow;
+	color: red;
+}
+
+.successMessage{
+	broder: 1px solid green;
+	color: Green;
+}
