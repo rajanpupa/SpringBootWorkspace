@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @EnableTransactionManagement
-public class Application {
+public class Application { 
 
     public static void main(String[] args) {
     	// this line is all you need for the basic Spring boot project

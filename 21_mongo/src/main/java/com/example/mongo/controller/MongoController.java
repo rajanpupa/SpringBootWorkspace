@@ -46,7 +46,8 @@ public class MongoController {
 	@PutMapping("/{id}")
 	public ResponseEntity<Customer> updateCustomer(@PathVariable("id")String id, @RequestBody Customer cust){
 		cust.setId(id);
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(cust));
+		return ResponseEntity.status(HttpStatus.ACCEPTED)
+				.body(repository.save(cust));
 	}
 	
 	@DeleteMapping("/{id}")
