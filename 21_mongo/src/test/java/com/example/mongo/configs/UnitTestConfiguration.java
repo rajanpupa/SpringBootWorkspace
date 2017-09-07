@@ -1,5 +1,5 @@
 package com.example.mongo.configs;
 
-public class UnitTestConfiguration {
+public class UnitTestConfiguration implements ProfileBasedConfiguration{
 
 }
