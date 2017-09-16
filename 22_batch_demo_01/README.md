@@ -1,5 +1,7 @@
 # Batch Demo
 
+* This application runs on start up, reads the in.csv file and stores the results in db.
+
 * Generate project from start.spring.io
 * Include dependencies 
 
