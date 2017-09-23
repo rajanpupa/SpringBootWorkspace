@@ -8,14 +8,13 @@ import com.example.aopdemo.service.TestService;
 
 @RestController
 public class TestController {
-
-	@Autowired
-	TestService tservice;
 	
+	@Autowired
+	TestService ts;
+
 	@GetMapping
 	public String aopTest(){
-		tservice.test();
-		
+		ts.test();
 		return "Controller working. Look at the logs for the aop log";
 	}
 }
