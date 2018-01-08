@@ -21,7 +21,10 @@ Table names should be same in both the database.
 
 * Edit the `source` and `target` database properties
 
+### JMeter
+`Need to have jmeter.properties file in src\test\jmeter folder`
 
+`.\gradlew jmeterRun`
 
 
 
