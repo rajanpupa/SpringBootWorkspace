@@ -20,6 +20,7 @@ public class MongoApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
+		if(true)return;
 		repo.deleteAll();
 		
 		// save a couple of customers
