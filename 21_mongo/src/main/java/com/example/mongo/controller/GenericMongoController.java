@@ -1,6 +1,7 @@
 package com.example.mongo.controller;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.bson.Document;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,6 +64,13 @@ public class GenericMongoController {
 		}
 		
 		return new ResponseEntity<List>( docList, HttpStatus.OK);
+	}
+	
+	@PutMapping("/db/{db}/coll/{coll}/")
+	public ResponseEntity<String> update(){
+		@PathVariable("db")String db,
+		@PathVariable("coll")String coll,
+		@RequestBody UpdateRequest updateRequest
 	}
 		
 	

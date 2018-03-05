@@ -16,3 +16,6 @@ tmp/
 local.properties
 .settings/
 .loadpath
+.gradle
+**.jar
+
