@@ -17,5 +17,6 @@ local.properties
 .settings/
 .loadpath
 .gradle
-**.jar
+**/*.jar
+**/gradle
 
