@@ -43,3 +43,7 @@ wscat -c ws://localhost:8080/socket
 1. SpringBoot version 2 did not support Scheduled
 2. @Scheduled method in springBoot version 1.5.9.RELEASE was not able to access instance variable.
     Instance variable was modified, but the scheduled method has older state of the instance.
+
+# References
+
+https://github.com/developerworks/spring-websocket-without-stomp
