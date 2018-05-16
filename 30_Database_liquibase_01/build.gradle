@@ -1,0 +1,81 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		
+		classpath 'org.liquibase:liquibase-core:3.4.1'
+    	classpath "org.liquibase:liquibase-gradle-plugin:1.1.1"
+		classpath 'mysql:mysql-connector-java:5.1.13'
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+apply plugin: 'liquibase'
+def changeLog = "$projectDir/src/main/resources/Changelog.xml"
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.liquibase:liquibase-core')
+	runtime('mysql:mysql-connector-java')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+task('dev') << {
+	println "executing dev"
+	liquibase {
+	    activities {
+	        main {
+	            changeLogFile changeLog
+	            url 'jdbc:mysql://localhost/test'
+	            username 'root'
+	            password ''
+	        }
+	    }
+	}    
+}
+
+task('qa') << {
+	println "executing qa"
+	liquibase {
+	    activities {
+	        main {
+	            changeLogFile changeLog
+	           url 'jdbc:mysql://qa-environment/mydb'
+	            username 'root'
+	            password '123456'
+	        }
+	    }
+	}    
+}
+
+task('prod') << {
+	println "executing prod"
+	liquibase {
+	    activities {
+	        main {
+	            changeLogFile changeLog
+	            url 'jdbc:mysql://prod-environment/mydb'
+	            username 'root'
+	            password '123456'
+	        }
+	    }
+	}    
+}
