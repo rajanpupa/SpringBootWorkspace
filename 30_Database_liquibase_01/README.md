@@ -57,3 +57,5 @@ def changeLog = "$projectDir/src/main/resources/Changelog.xml"
 ## References
 
 [DZone](https://dzone.com/articles/managing-your-database-with-liquibase-and-gradle)
+https://www.jeejava.com/spring-boot-liquibase-gradle-example/
+[Medium detail tutorial](https://medium.com/@harittweets/evolving-your-database-using-spring-boot-and-liquibase-844fcd7931da)
